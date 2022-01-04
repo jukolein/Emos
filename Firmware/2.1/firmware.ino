@@ -1216,7 +1216,7 @@ double smooth(double value, String type) {
         // and returns that value. 
         //--------------------------------------------------------
         float relativeHumidity = 0.0f;  //variable to store the final result in
-        float imp = voltage/(3.3*30*R_temp/R1);  //with the equation of a voltage divier, the resistance in Ohm is calculated. Due to the wiring, a correction polynom is needed to get the correct values
+        float imp = voltage/(3.3*100000/R1);  //with the equation of a voltage divier, the resistance in Ohm is calculated. Due to the wiring, a correction polynom is needed to get the correct values
         float i = 10 * log10f( imp );  //strange things going on
         float hum0 = (-5.897e-4 * powf(i,3) + 6.716e-2 * powf(i,2) - 4.019 * i + 1.187e2);  //I wish I knew what appes here, however I haven't got the slightest idea. However, it seems to work.
         hum = hum0 - public_temperature / 2.15;  //calculation of the relative humidity out of hum0 and the temperature
